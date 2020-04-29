@@ -15,7 +15,7 @@ import java.util.HashMap;
  * Created by LaunchCode
  */
 @Controller
-@RequestMapping(value = "list")
+@RequestMapping(value = "list") //David annotated.It is localhost:8080/list
 public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
@@ -34,8 +34,8 @@ public class ListController {
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
     }
 
-    @RequestMapping(value = "")
-    public String list(Model model) {
+    @RequestMapping(value = "")//David annotated.It is localhost:8080/list
+    public String list(Model model) {//David annotated.Use model sends contents to list.html
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
         model.addAttribute("employers", JobData.getAllEmployers());
@@ -43,11 +43,13 @@ public class ListController {
         model.addAttribute("positions", JobData.getAllPositionTypes());
         model.addAttribute("skills", JobData.getAllCoreCompetency());
 
-        return "list";
+        return "list";//David annotated.It is list.html
     }
 
-    @RequestMapping(value = "jobs")
-    public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
+    @RequestMapping(value = "jobs")//David annotated.It is localhost:8080/list/jobs
+    public String listJobsByColumnAndValue(Model model,
+                                           @RequestParam String column,
+                                           @RequestParam String value) {//David annotated.Use model sends contents to list-jobs.html
         ArrayList<Job> jobs;
         if (column.toLowerCase().equals("all")){
             jobs = JobData.findAll();
@@ -58,6 +60,6 @@ public class ListController {
         }
         model.addAttribute("jobs", jobs);
 
-        return "list-jobs";
+        return "list-jobs";//David annotated.It is list-jobs.html
     }
 }

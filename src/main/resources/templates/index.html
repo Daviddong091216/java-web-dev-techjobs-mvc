@@ -7,12 +7,16 @@
         <div th:replace="fragments :: page-header"></div>
 
         <div class="container body-content">
-            <h2>View jobs by:</h2>
-            <ul>
+            <h1>View jobs by:</h1>
+            <h3><!--David modified. It was ""-->
+            <ol><!--David modified. It was "ul"-->
                 <li th:each="action : ${actions}">
                     <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
+<!--                    <a th:href="${action.value}" th:text="${action.Value}">mmmmm</a>-->
+<!--                    <a th:href="${action.value}" >Testing message</a>-->
                 </li>
-            </ul>
+            </ol>
+            </h3>
         </div>
 
     </body>
