@@ -51,7 +51,7 @@ public class ListController {
                                            @RequestParam String column,
                                            @RequestParam String value) {//David annotated.Use model sends contents to list-jobs.html
         ArrayList<Job> jobs;
-        if (column.toLowerCase().equals("all")){
+        if (column.toLowerCase().equals("all") && value.toLowerCase().equals("all") ){//David added && value.toLowerCase().equals("all")
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
         } else {
