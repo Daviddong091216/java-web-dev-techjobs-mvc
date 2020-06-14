@@ -38,10 +38,10 @@ public class ListController {
     public String list(Model model) {//David annotated.Use model sends contents to list.html
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-        model.addAttribute("employers", JobData.getAllEmployers());
-        model.addAttribute("locations", JobData.getAllLocations());
-        model.addAttribute("positions", JobData.getAllPositionTypes());
-        model.addAttribute("skills", JobData.getAllCoreCompetency());
+//        model.addAttribute("employers", JobData.getAllEmployers());
+//        model.addAttribute("locations", JobData.getAllLocations());
+//        model.addAttribute("positions", JobData.getAllPositionTypes());
+//        model.addAttribute("skills", JobData.getAllCoreCompetency());
 
         return "list";//David annotated.It is list.html
     }
